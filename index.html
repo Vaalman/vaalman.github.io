@@ -1,38 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: repeat(10, 1fr);
-      gap: 1px;
-      width: 500px;
-      height: 500px;
-      border: 1px solid black;
-    }
-
-    .grid-item {
-      background-color: lightgray;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        header, footer {
+            background-color: #555;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .content {
+            flex: 3;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #ddd;
+            padding: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            color: #555;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-
-<div class="grid-container">
-  <!-- generate the grid items dynamically using JavaScript -->
-</div>
-
-<script>
-  const gridContainer = document.querySelector('.grid-container');
-
-  // create 100 grid items
-  for (let i = 0; i < 100; i++) {
-    const gridItem = document.createElement('div');
-    gridItem.classList.add('grid-item');
-    gridContainer.appendChild(gridItem);
-  }
-</script>
-
+    <div class="container">
+        <header>
+            <h1>Welcome to My Minimalist Landing Page</h1>
+        </header>
+        <main>
+            <div class="content">
+                <p>This is a simple landing page with a mid-gray color scheme. It is designed to be minimalist and functional.</p>
+            </div>
+            <aside class="sidebar">
+                <h2>Follow Me</h2>
+                <ul>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                </ul>
+            </aside>
+        </main>
+        <footer>
+            <p>&copy; 2024 Minimalist Landing Page</p>
+        </footer>
+    </div>
 </body>
 </html>
