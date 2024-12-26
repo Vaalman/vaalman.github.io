@@ -3,138 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pieter Janssen - Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <title>Vaalman dot com</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: 'Kanit', sans-serif;
-            color: white;
-            background: #333;
-        }
-        body {
-            background: url('Pictures/DJI_0028.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        .overlay {
-            background: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        .container {
-            position: relative;
-            z-index: 2;
+            font-family: Courier, monospace;
+            background-color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
             min-height: 100vh;
-            padding: 20px;
-        }
-        header {
-            background: rgba(85, 85, 85, 0.7);
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .upper-section {
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .upper-section h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-        .upper-section p {
-            font-size: 1.2em;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .bottom-section {
-            display: flex;
-            flex: 1;
-        }
-        .content {
-            flex: 3;
-            background: rgba(255, 255, 255, 0.6);
             color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            margin-right: 20px;
         }
-        .sidebar {
-            flex: 1;
-            background: rgba(85, 85, 85, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-        .sidebar a {
-            color: #ccc;
-            text-decoration: none;
-        }
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background: rgba(85, 85, 85, 0.7);
+
+        .container {
+            max-width: 800px;
+            margin-top: 100px;
             text-align: center;
-            padding: 10px;
-            border-radius: 10px;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+            color: #333;
+        }
+
+		.container .logo img {
+			max-width: 100%;
+			height: auto;
+		}
+
+        .links {
             margin-top: 20px;
         }
-        footer p {
-            margin: 0;
+
+        .link {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <div class="container">
-        <header>
-            <h1>Pieter Janssen</h1>
-        </header>
-        <main>
-            <div class="upper-section">
-                <h2>Welcome to Vaalman Dot Com.</h2>
-                <p>...</p>
-            </div>
-            <div class="bottom-section">
-                <div class="content">
-                    <h3>Info</h3>
-                    <p>This page is a work in progress.</p>
-                </div>
-                <aside class="sidebar">
-                <h2>Follow me here:</h2>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/pieter-janssen-7137aa151/" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://instagram.com/thelifeofvaalman" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.youtube.com/vaalman" target="_blank">YouTube</a></li>
-                    </ul>
-                </aside>
-            </div>
-        </main>
-        <footer>
-            <p>&copy; 2024 Pieter Janssen. All Rights Reserved.</p>
-        </footer>
+        <h1>Vaalman</h1>
+		<img src="Pictures/vaalman.png" alt="Vaalman">
     </div>
+    <div class="links">
+        <a href="https://www.youtube.com/vaalman" target="_blank">Youtube</a>
+        <a href="https://instagram.com/thelifeofvaalman" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/pieter-janssen-7137aa151/" target="_blank">LinkedIn</a>
+    </div>
+    <footer>
+        &copy; 2024 Pieter Janssen
+    </footer>
 </body>
 </html>
