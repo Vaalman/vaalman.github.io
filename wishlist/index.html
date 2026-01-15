@@ -87,6 +87,12 @@
     .filters a {
       cursor: pointer;
     }
+
+    .updated {
+      font-size: 0.75em;
+      margin-bottom: 40px;
+      opacity: 0.6;
+    }
   </style>
 </head>
 <body>
@@ -96,6 +102,7 @@
   <p class="intro">
     A small list of things I’d like to obtain sooner or later — just in case you’re looking for inspiration for a present.
   </p>
+  <div class="updated" id="last-updated"></div>
   <div class="filters">
     Filter by budget:
     <a href="#" data-filter="all">all</a> ·
@@ -116,9 +123,14 @@ let allItems = [];
 
 fetch('wishlist.json')
   .then(res => res.json())
-  .then(items => {
-    allItems = items;
+  .then(data => {
+    allItems = data.items;
     renderItems(allItems);
+
+    if (data.last_updated) {
+      document.getElementById('last-updated').textContent =
+        `last updated ${data.last_updated}`;
+    }
   });
 
   function formatBudget(item) {
