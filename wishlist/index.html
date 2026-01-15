@@ -195,8 +195,8 @@ document.querySelectorAll('.filters a').forEach(link => {
     } else {
       const [min, max] = f.split('-').map(Number);
       filtered = allItems.filter(i =>
-        i.budget_min >= min && i.budget_max <= max
-      );
+  i.budget_min <= max && i.budget_max >= min
+);
     }
 
     renderItems(filtered);
