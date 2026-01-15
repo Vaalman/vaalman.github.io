@@ -78,7 +78,7 @@
   <div id="wishlist"></div>
 
   <footer>
-    <a href="index.html">Back</a>
+    &copy; 2024 Pieter Janssen
   </footer>
 </main>
 
@@ -94,4 +94,18 @@ fetch('wishlist.json')
 
       div.innerHTML = `
         ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
-        <div class="item-name">${item.name}<
+        <div class="item-name">${item.name}</div>
+        ${item.budget ? `<div class="item-budget">${item.budget}</div>` : ''}
+        ${item.url ? `<a href="${item.url}" target="_blank">View</a>` : ''}
+      `;
+
+      container.appendChild(div);
+    });
+  })
+  .catch(() => {
+    document.getElementById('wishlist').innerText = 'Unable to load wishlist.';
+  });
+</script>
+
+</body>
+</html>
