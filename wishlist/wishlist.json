@@ -1,14 +1,23 @@
 [
     {
       "name": "Anova Precision Cooker 3.0",
+      "comment": "De gewone of de 3.0, allebij okee.",
       "image": "https://cdn.accentuate.io/7437371375805/1718130749292/Compare_Anova_Precision_Cooker_3.webp?v=1718130749293&transform=resize=533",
       "url": "https://anovaculinary.com/en-nl/pages/find-your-anova-precision-cooker",
       "budget": "€200–€300"
     },
     {
       "name": "Anova Precision Container 12L",
+      "comment": "Enkel indien samen met Anova Precision Cooker",
       "image": "https://anovaculinary.com/cdn/shop/files/HemiFlow.jpg?v=1667438065&width=750",
       "url": "https://anovaculinary.com/en-nl/products/anova-precision-12l-container",
+      "budget": "€50–€100"
+    },
+    {
+      "name": "KitchenAid Vleesmolen",
+      "comment": "Metalen versie, voor op keukenrobot. Mag in set met worstenmaker maar moet niet noodzakelijk",
+      "image": "https://www.whirlpool.com/is/image/content/dam/emea/kitchenaid/image/product-shot/profile/FXJ58Z_DG201887007.jpg?icc=WebCoated&wid=500&hei=500",
+      "url": "https://www.kitchenaid.be/nl_BE/keukenrobot-accessoires/859711723600/vleesmolen-en-worstenmaker-set-5ksmmga-roestvrij-staal?utm_source=google&utm_medium=cpc&utm_campaign=nl-be-sda-ao-performance-max-bestsellers&utm_term=&utm_content=&utm_id=18728593328__&gad_source=1&gad_campaignid=18725027206&gbraid=0AAAAADDD56EBtu9VpumIcoiiDWhuEiExj&gclid=CjwKCAiAvaLLBhBFEiwAYCNTf5IagmrLkNwsyoREdmkE_g1ZgV38FKlTiW7Jo4Ena4TwCA6KRLZ7HxoC6yAQAvD_BwE",
       "budget": "€50–€100"
     }
   ]

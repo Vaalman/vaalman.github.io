@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wishlist — Vaalman</title>
+  <title>Wishlist Vaalman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -23,11 +23,6 @@
       margin: 80px auto;
       text-align: center;
       padding: 0 20px;
-    }
-
-    h1 {
-      font-weight: normal;
-      margin-bottom: 60px;
     }
 
     .item {
@@ -78,7 +73,7 @@
   <div id="wishlist"></div>
 
   <footer>
-    &copy; 2024 Pieter Janssen
+    &copy; 2026 Pieter Janssen
   </footer>
 </main>
 
@@ -96,6 +91,7 @@ fetch('wishlist.json')
         ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
         <div class="item-name">${item.name}</div>
         ${item.budget ? `<div class="item-budget">${item.budget}</div>` : ''}
+        ${item.comment ? `<div class="item-comment">${item.comment}</div>` : ''}
         ${item.url ? `<a href="${item.url}" target="_blank">View</a>` : ''}
       `;
 
