@@ -77,6 +77,16 @@
       font-size: 0.8em;
       opacity: 0.7;
     }
+
+    .filters {
+      font-size: 0.85em;
+      margin-bottom: 60px;
+      opacity: 0.75;
+    }
+
+    .filters a {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -86,6 +96,14 @@
   <p class="intro">
     A small list of things I’d like to obtain sooner or later — just in case you’re looking for inspiration for a present.
   </p>
+  <div class="filters">
+    show:
+    <a href="#" data-filter="all">all</a> ·
+    <a href="#" data-filter="0-50">&lt;50</a> ·
+    <a href="#" data-filter="50-100">50–100</a> ·
+    <a href="#" data-filter="100-200">100–200</a> ·
+    <a href="#" data-filter="200+">&gt;200</a>
+  </div>
   <div id="wishlist"></div>
 
   <footer>
@@ -125,6 +143,60 @@ fetch('wishlist.json')
   .catch(() => {
     document.getElementById('wishlist').innerText = 'Unable to load wishlist.';
   });
+  let allItems = [];
+
+fetch('wishlist.json')
+  .then(res => res.json())
+  .then(items => {
+    allItems = items;
+    renderItems(allItems);
+  });
+
+function renderItems(items) {
+  const container = document.getElementById('wishlist');
+  container.innerHTML = '';
+
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'item';
+
+    div.innerHTML = `
+      ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
+      <div class="item-name">${item.name}</div>
+      ${item.comment ? `<div class="item-comment">${item.comment}</div>` : ''}
+      ${item.budget ? `<div class="item-budget">budget ${item.budget}</div>` : ''}
+      ${item.url ? `<a href="${item.url}" target="_blank">View</a>` : ''}
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+document.querySelectorAll('.filters a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const f = link.dataset.filter;
+
+    if (f === 'all') {
+      renderItems(allItems);
+      return;
+    }
+
+    let filtered = [];
+
+    if (f === '200+') {
+      filtered = allItems.filter(i => i.budget_min >= 200);
+    } else {
+      const [min, max] = f.split('-').map(Number);
+      filtered = allItems.filter(i =>
+        i.budget_min >= min && i.budget_max <= max
+      );
+    }
+
+    renderItems(filtered);
+  });
+});
+
 </script>
 
 </body>
