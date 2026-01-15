@@ -39,14 +39,21 @@
     }
 
     .item-name {
-      font-size: 1.1em;
-      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 1.05em;
+      margin-bottom: 4px;
     }
 
     .item-budget {
-      font-size: 0.9em;
-      margin-bottom: 10px;
+      font-size: 0.85em;
+      font-style: italic;
       opacity: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .item-comment {
+      font-size: 0.9em;
+      margin-bottom: 6px;
     }
 
     .item a {
@@ -90,8 +97,16 @@ fetch('wishlist.json')
       div.innerHTML = `
         ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
         <div class="item-name">${item.name}</div>
-        ${item.budget ? `<div class="item-budget">${item.budget}</div>` : ''}
-        ${item.comment ? `<div class="item-comment">${item.comment}</div>` : ''}
+
+        ${item.comment
+          ? `<div class="item-comment">${item.comment}</div>`
+          : ''
+        }
+
+        ${item.budget
+          ? `<div class="item-budget">budget ${item.budget}</div>`
+          : ''
+        }
         ${item.url ? `<a href="${item.url}" target="_blank">View</a>` : ''}
       `;
 
