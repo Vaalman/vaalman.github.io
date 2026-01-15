@@ -159,17 +159,17 @@ fetch('wishlist.json')
 
   if (item.budget_min != null && item.budget_max != null) {
     if (item.budget_min === item.budget_max) {
-      return `budget €${item.budget_min}`;
+      return `Budget: €${item.budget_min}`;
     }
-    return `budget €${item.budget_min}–€${item.budget_max}`;
+    return `Budget: €${item.budget_min}–€${item.budget_max}`;
   }
 
   if (item.budget_min != null) {
-    return `budget ≥ €${item.budget_min}`;
+    return `Budget: ≥ €${item.budget_min}`;
   }
 
   if (item.budget_max != null) {
-    return `budget ≤ €${item.budget_max}`;
+    return `Budget: ≤ €${item.budget_max}`;
   }
 
   return '';
@@ -181,13 +181,14 @@ function renderItems(items) {
 
   items.forEach(item => {
     const div = document.createElement('div');
+    const budgetText = formatBudget(item);
     div.className = 'item';
 
     div.innerHTML = `
       ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
       <div class="item-name">${item.name}</div>
       ${item.comment ? `<div class="item-comment">${item.comment}</div>` : ''}
-      ${item.budget ? `<div class="item-budget">Budget: ${item.budget}</div>` : ''}
+      ${budgetText ? `<div class="item-budget">${budgetText}</div>` : ''}
       ${item.url ? `<a href="${item.url}" target="_blank">View</a>` : ''}
     `;
 
