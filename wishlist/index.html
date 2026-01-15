@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishlist — Vaalman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Courier New", Courier, monospace;
+      background: #fff;
+      color: #000;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-weight: normal;
+      margin-bottom: 60px;
+    }
+
+    .item {
+      margin-bottom: 60px;
+    }
+
+    .item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    .item-name {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    .item-budget {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .item a {
+      font-size: 0.9em;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.8em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <h1>Wishlist</h1>
+
+  <div id="wishlist"></div>
+
+  <footer>
+    <a href="index.html">Back</a>
+  </footer>
+</main>
+
+<script>
+fetch('wishlist.json')
+  .then(response => response.json())
+  .then(items => {
+    const container = document.getElementById('wishlist');
+
+    items.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'item';
+
+      div.innerHTML = `
+        ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
+        <div class="item-name">${item.name}<
