@@ -90,6 +90,7 @@
 
     .updated {
       font-size: 0.75em;
+      font-style: italic;
       margin-bottom: 40px;
       opacity: 0.6;
     }
@@ -129,7 +130,7 @@ fetch('wishlist.json')
 
     if (data.last_updated) {
       document.getElementById('last-updated').textContent =
-        `last updated ${data.last_updated}`;
+        `Last update: ${data.last_updated}`;
     }
   });
 
